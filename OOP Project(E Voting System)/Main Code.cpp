@@ -57,7 +57,7 @@ private:
 	Candidate *candidates;
 
 public:
-	Election(string t="", int d=0,int m):type(t),duration(d),maxseats(m){
+	Election(string t="", int d=0,int m=0):type(t),duration(d),maxseats(m){
 		if (maxseats > 0)
 		{
 			candidates = new Candidate[maxseats];
@@ -100,13 +100,13 @@ public:
 class RegionalElection:protected Election{
 public:
 	RegionalElection() { settype("Regional"); }
-	RegionalElection() {}
+	~RegionalElection() {}
 };
 
 class NationalElection:protected Election{
 public:
 	NationalElection() { settype("National"); }
-	NationalElection() {}
+	~NationalElection() {}
 };
  
 void displayresults() {
