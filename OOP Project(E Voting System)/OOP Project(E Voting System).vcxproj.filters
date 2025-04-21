@@ -18,5 +18,11 @@
     <ClCompile Include="Main Code.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Test 1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Test 2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
