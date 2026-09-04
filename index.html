@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AuraVote - C++ Object-Oriented E-Voting System</title>
+  <meta name="description" content="Object-Oriented Programming (OOP) C++ Project Architecture featuring Encapsulation, Inheritance, Polymorphism, Abstraction, and a Glassmorphic Interface.">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <!-- Chart.js for real-time live result graphs -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- Parallax Background Orbs -->
+  <div class="parallax-bg" id="parallaxBg">
+    <div class="orb orb-1" id="orb1"></div>
+    <div class="orb orb-2" id="orb2"></div>
+    <div class="orb orb-3" id="orb3"></div>
+  </div>
+
+  <!-- Noise Texture Overlay -->
+  <div class="noise-overlay"></div>
+
+  <div class="app-container">
+
+    <!-- Header Navigation -->
+    <header class="header-glass">
+      <a href="#" class="brand-logo">
+        <div class="brand-icon">&lt;OOP&gt;</div>
+        <div>
+          <div class="brand-title">AuraVote</div>
+          <div class="brand-subtitle">C++ Object-Oriented Architecture</div>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#hero" class="nav-link active">Overview</a></li>
+          <li><a href="#pillars" class="nav-link">OOP Pillars</a></li>
+          <li><a href="#uml" class="nav-link">UML Diagram</a></li>
+          <li><a href="#portal" class="nav-link">Voter Session</a></li>
+          <li><a href="#ballot" class="nav-link">Ballot Grid</a></li>
+          <li><a href="#results" class="nav-link">Live Results</a></li>
+          <li><a href="#admin" class="nav-link">Admin Class</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <div class="badge-oop">
+          <span>CS-201 Final OOP Project</span>
+        </div>
+        <button class="btn-glass btn-primary" onclick="quickLoginDemo()">Demo Voter Object</button>
+      </div>
+    </header>
+
+    <!-- Hero Section: Object-Oriented Focus -->
+    <section class="hero-section" id="hero">
+      <div class="hero-content">
+        <div class="hero-tag">
+          💻 Academic C++20 Project • Object-Oriented Software Architecture
+        </div>
+        <h1 class="hero-title">
+          Object-Oriented <span>E-Voting Architecture</span>
+        </h1>
+        <p class="hero-desc">
+          A software design project demonstrating the 4 core pillars of OOP — <strong>Encapsulation</strong>, <strong>Inheritance</strong>, <strong>Polymorphism</strong>, and <strong>Abstraction</strong> — powering a secure electronic voting platform.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#pillars" class="btn-glass btn-primary">Explore 4 OOP Pillars</a>
+          <a href="#uml" class="btn-glass btn-gold">Inspect UML Class Matrix</a>
+        </div>
+      </div>
+
+      <!-- 3D Interactive Parallax Glass Card Stack -->
+      <div class="hero-parallax-stage" id="heroStage">
+        <div class="glass-card-stage card-layer-back">
+          <div class="card-badge">Class Hierarchy</div>
+          <div class="card-title-lg">User Base & Derived Classes</div>
+          <p style="font-size: 0.82rem; color: var(--slate-rose); font-family: var(--font-mono);">
+            class Voter : public User<br>
+            class Admin : public User
+          </p>
+        </div>
+
+        <div class="glass-card-stage card-layer-mid">
+          <div class="card-badge">Polymorphism</div>
+          <div class="card-title-lg">Virtual Dynamic Dispatch</div>
+          <p style="font-size: 0.82rem; color: var(--slate-rose); font-family: var(--font-mono);">
+            virtual string getRole() const = 0;<br>
+            virtual void displayBanner() const;
+          </p>
+        </div>
+
+        <div class="glass-card-stage card-layer-front" id="frontGlassCard">
+          <div class="card-badge">Active Election Object</div>
+          <div class="card-title-lg">NationalElection : public Election</div>
+          <div style="font-size: 0.85rem; background: rgba(255,255,255,0.45); padding: 12px; border-radius: 12px; font-family: var(--font-mono); border: 1px solid rgba(255,255,255,0.6);">
+            <div><strong>Active Candidates:</strong> 4 Candidate Objects</div>
+            <div><strong>Max Seats:</strong> 10 | <strong>Duration:</strong> 48h</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 OOP PILLARS SHOWCASE SECTION -->
+    <section id="pillars" style="padding-top: 20px;">
+      <div class="section-header">
+        <span class="section-subtitle">Core Computer Science Foundations</span>
+        <h2 class="section-title">The 4 Pillars of Object-Oriented Design</h2>
+        <p class="section-desc">How fundamental C++ OOP paradigms are structured and executed inside `Main Code.cpp`.</p>
+      </div>
+
+      <div class="oop-pillars-grid">
+        <div class="pillar-card" onclick="highlightOOPConcept('encapsulation')">
+          <span class="pillar-icon">Pillar 1</span>
+          <h3 class="pillar-title">Encapsulation</h3>
+          <p style="font-size: 0.85rem; color: var(--slate-rose);">
+            Private data members (`cnic`, `password`, `voteCount`) protected behind public accessor and mutator methods.
+          </p>
+          <div class="pillar-code">User::getCnic(), Candidate::incrementVote()</div>
+        </div>
+
+        <div class="pillar-card" onclick="highlightOOPConcept('inheritance')">
+          <span class="pillar-icon">Pillar 2</span>
+          <h3 class="pillar-title">Inheritance</h3>
+          <p style="font-size: 0.85rem; color: var(--slate-rose);">
+            Class code reuse. `Voter` and `Admin` derive from `User`. `Local`, `Regional`, and `National` derive from `Election`.
+          </p>
+          <div class="pillar-code">class Voter : public User</div>
+        </div>
+
+        <div class="pillar-card" onclick="highlightOOPConcept('polymorphism')">
+          <span class="pillar-icon">Pillar 3</span>
+          <h3 class="pillar-title">Polymorphism</h3>
+          <p style="font-size: 0.85rem; color: var(--slate-rose);">
+            Runtime dynamic binding via virtual methods. Overriding `getRole()` and `displayElectionBanner()`.
+          </p>
+          <div class="pillar-code">virtual string getRole() override</div>
+        </div>
+
+        <div class="pillar-card" onclick="highlightOOPConcept('abstraction')">
+          <span class="pillar-icon">Pillar 4</span>
+          <h3 class="pillar-title">Abstraction</h3>
+          <p style="font-size: 0.85rem; color: var(--slate-rose);">
+            Pure virtual function `getRole() = 0` creates an abstract contract, hiding low-level file I/O operations.
+          </p>
+          <div class="pillar-code">virtual string getRole() = 0</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- UML CLASS MATRIX & CALL STACK EXPLORER -->
+    <section class="portal-section" id="uml">
+      <div class="section-header">
+        <span class="section-subtitle">System Design Specification</span>
+        <h2 class="section-title">UML Class Diagram & Memory Tracer</h2>
+        <p class="section-desc">Interactive visual diagram of C++ classes, attributes, methods, and stack/heap memory allocation flow.</p>
+      </div>
+
+      <div class="chart-glass-card">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 12px;">
+          <h3 style="font-family: var(--font-serif); font-size: 1.3rem;">Class Architecture Matrix</h3>
+          <div class="tabs-glass" style="margin-bottom: 0;">
+            <button class="tab-btn active" onclick="switchUmlTab('diagramTab')">Visual UML Diagram</button>
+            <button class="tab-btn" onclick="switchUmlTab('stackTab')">Call Stack Tracer</button>
+            <button class="tab-btn" onclick="switchUmlTab('codeTab')">C++ Source Header</button>
+          </div>
+        </div>
+
+        <!-- UML Visual Diagram Tab -->
+        <div id="diagramTab">
+          <div class="uml-container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
+              
+              <!-- User Class -->
+              <div class="uml-box">
+                <div class="uml-box-header">&lt;&lt;Abstract&gt;&gt; User</div>
+                <div class="uml-attr"># string cnic</div>
+                <div class="uml-attr"># string password</div>
+                <div class="uml-attr"># string name</div>
+                <div class="uml-meth">+ virtual string getRole() = 0</div>
+                <div class="uml-meth">+ bool authenticate(cnic, pass)</div>
+              </div>
+
+              <!-- Voter Class -->
+              <div class="uml-box">
+                <div class="uml-box-header">Voter : public User</div>
+                <div class="uml-attr">- bool hasVoted</div>
+                <div class="uml-attr">- int votedCandidateId</div>
+                <div class="uml-meth">+ string getRole() override</div>
+                <div class="uml-meth">+ setHasVoted(status)</div>
+              </div>
+
+              <!-- Admin Class -->
+              <div class="uml-box">
+                <div class="uml-box-header">Admin : public User</div>
+                <div class="uml-attr">- string adminKey</div>
+                <div class="uml-meth">+ string getRole() override</div>
+                <div class="uml-meth">+ getAdminKey() string</div>
+              </div>
+
+              <!-- Election Class -->
+              <div class="uml-box">
+                <div class="uml-box-header">Election</div>
+                <div class="uml-attr"># string type</div>
+                <div class="uml-attr"># vector&lt;Candidate&gt; candidates</div>
+                <div class="uml-meth">+ virtual displayBanner()</div>
+                <div class="uml-meth">+ addCandidate(Candidate)</div>
+                <div class="uml-meth">+ displayResults()</div>
+              </div>
+
+              <!-- Candidate Class -->
+              <div class="uml-box">
+                <div class="uml-box-header">Candidate</div>
+                <div class="uml-attr">- int id</div>
+                <div class="uml-attr">- string name</div>
+                <div class="uml-attr">- int voteCount</div>
+                <div class="uml-meth">+ incrementVote()</div>
+                <div class="uml-meth">+ getVoteCount() int</div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Call Stack Tracer Tab -->
+        <div id="stackTab" style="display: none;">
+          <div class="uml-container" style="font-size: 0.85rem; line-height: 1.8;" id="callStackLog">
+            <span style="color: var(--champagne-gold);">[CALL STACK TRACER - RUNTIME MEMORY DISPATCH]</span><br>
+            1. main() -&gt; Instantiates `EVotingSystem system;` on Stack.<br>
+            2. EVotingSystem::seedInitialData() -&gt; Allocates `voters` vector & Candidate pointers on Heap.<br>
+            3. User select election -&gt; `delete currentElection; currentElection = new NationalElection();` (Polymorphic heap allocation).<br>
+            4. Voter authentication -&gt; Calls virtual `User::authenticate(cnic, pass)`.<br>
+            5. Vote cast -&gt; Invokes `Candidate::incrementVote()` & writes record to `votes.txt`.
+          </div>
+        </div>
+
+        <!-- C++ Source Code Tab -->
+        <div id="codeTab" style="display: none;">
+          <div class="cpp-inspector-card">
+            <div class="code-header">
+              <div class="code-dots">
+                <span class="code-dot dot-red"></span>
+                <span class="code-dot dot-yellow"></span>
+                <span class="code-dot dot-green"></span>
+              </div>
+              <span style="color: #908076; font-size: 0.82rem;">Main Code.cpp — Abstract User & Derived Classes</span>
+            </div>
+
+            <pre class="code-block"><code><span class="code-kw">class</span> <span class="code-cls">User</span> { <span class="code-kw">// Abstract Base Class</span>
+<span class="code-kw">protected</span>:
+    <span class="code-kw">std::string</span> cnic;
+    <span class="code-kw">std::string</span> password;
+    <span class="code-kw">std::string</span> name;
+<span class="code-kw">public</span>:
+    <span class="code-kw">virtual</span> ~<span class="code-cls">User</span>() {}
+    <span class="code-kw">virtual std::string</span> <span class="code-fn">getRole</span>() <span class="code-kw">const</span> = 0; <span class="code-kw">// Pure Virtual Abstraction</span>
+};
+
+<span class="code-kw">class</span> <span class="code-cls">Voter</span> : <span class="code-kw">public</span> <span class="code-cls">User</span> { <span class="code-kw">// Derived Class (Inheritance)</span>
+<span class="code-kw">private</span>:
+    <span class="code-kw">bool</span> hasVoted;
+    <span class="code-kw">int</span> votedCandidateId;
+<span class="code-kw">public</span>:
+    <span class="code-kw">std::string</span> <span class="code-fn">getRole</span>() <span class="code-kw">const override</span> { <span class="code-kw">return</span> <span class="code-str">"Voter"</span>; } <span class="code-kw">// Polymorphic Override</span>
+};</code></pre>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Voter Session & Authentication Portal -->
+    <section class="portal-section" id="portal">
+      <div class="section-header">
+        <span class="section-subtitle">Class Authentication Interface</span>
+        <h2 class="section-title">Voter Object Authentication</h2>
+        <p class="section-desc">Instantiating a `Voter` object session and invoking `User::authenticate(cnic, password)`.</p>
+      </div>
+
+      <div style="text-align: center;">
+        <div class="tabs-glass">
+          <button class="tab-btn active" onclick="switchTab('loginTab')">Voter Login Method</button>
+          <button class="tab-btn" onclick="switchTab('registerTab')">Instantiate New Voter</button>
+          <button class="tab-btn" onclick="switchTab('adminTab')">Admin Class Login</button>
+        </div>
+      </div>
+
+      <!-- Login Form -->
+      <div class="form-glass-container" id="loginTab">
+        <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--terracotta); margin-bottom: 12px; text-align: center;">
+          [OOP Method: User::authenticate()]
+        </div>
+        <h3 style="font-family: var(--font-serif); font-size: 1.4rem; margin-bottom: 20px; text-align: center;">Voter Credentials</h3>
+        <form onsubmit="handleVoterLogin(event)">
+          <div class="form-group">
+            <label class="form-label">CNIC (User::cnic member)</label>
+            <input type="text" id="loginCnic" class="input-glass" placeholder="35202-1234567-1" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Password (User::password member)</label>
+            <input type="password" id="loginPass" class="input-glass" placeholder="••••••••" required>
+          </div>
+          <button type="submit" class="btn-glass btn-primary" style="width: 100%; justify-content: center; padding: 12px;">Execute User::authenticate()</button>
+        </form>
+      </div>
+
+      <!-- Register Form -->
+      <div class="form-glass-container" id="registerTab" style="display: none;">
+        <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--terracotta); margin-bottom: 12px; text-align: center;">
+          [OOP Instantiation: new Voter(cnic, pass, name)]
+        </div>
+        <h3 style="font-family: var(--font-serif); font-size: 1.4rem; margin-bottom: 20px; text-align: center;">Register New Voter Object</h3>
+        <form onsubmit="handleVoterRegister(event)">
+          <div class="form-group">
+            <label class="form-label">Full Legal Name</label>
+            <input type="text" id="regName" class="input-glass" placeholder="e.g. Alice Johnson" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">CNIC Number</label>
+            <input type="text" id="regCnic" class="input-glass" placeholder="35202-9999999-4" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Password</label>
+            <input type="password" id="regPass" class="input-glass" placeholder="••••••••" required>
+          </div>
+          <button type="submit" class="btn-glass btn-primary" style="width: 100%; justify-content: center; padding: 12px;">Instantiate & Store to users.txt</button>
+        </form>
+      </div>
+
+      <!-- Admin Tab -->
+      <div class="form-glass-container" id="adminTab" style="display: none;">
+        <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--terracotta); margin-bottom: 12px; text-align: center;">
+          [OOP Class: Admin : public User]
+        </div>
+        <h3 style="font-family: var(--font-serif); font-size: 1.4rem; margin-bottom: 20px; text-align: center;">Admin Object Session</h3>
+        <form onsubmit="handleAdminLogin(event)">
+          <div class="form-group">
+            <label class="form-label">Admin CNIC</label>
+            <input type="text" id="adminCnic" class="input-glass" placeholder="11111-1111111-1" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Admin Password / Key</label>
+            <input type="password" id="adminPass" class="input-glass" placeholder="admin123" required>
+          </div>
+          <button type="submit" class="btn-glass btn-gold" style="width: 100%; justify-content: center; padding: 12px;">Authenticate Admin Object</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Candidate Ballot Grid (Vector<Candidate> Objects) -->
+    <section class="portal-section" id="ballot">
+      <div class="section-header">
+        <span class="section-subtitle">Composition: vector&lt;Candidate&gt; candidates</span>
+        <h2 class="section-title" id="currentElectionTitle">Candidate Objects Array</h2>
+        <p class="section-desc">Invoking `Candidate::incrementVote()` upon ballot submission.</p>
+      </div>
+
+      <div class="ballot-grid" id="candidateGrid">
+        <!-- Candidate Cards rendered dynamically by app.js with [OOP: Candidate::incrementVote()] badges -->
+      </div>
+    </section>
+
+    <!-- Live Results Dashboard -->
+    <section class="portal-section" id="results">
+      <div class="section-header">
+        <span class="section-subtitle">Method: Election::displayResults()</span>
+        <h2 class="section-title">Polymorphic Election Results</h2>
+        <p class="section-desc">Live aggregation of `Candidate::getVoteCount()` member variables.</p>
+      </div>
+
+      <div class="results-container">
+        <div class="chart-glass-card">
+          <div class="chart-title">
+            <span>Vote Distribution Graph</span>
+            <span class="badge-oop">Chart.js Renderer</span>
+          </div>
+          <div class="chart-wrapper">
+            <canvas id="resultsCanvas"></canvas>
+          </div>
+        </div>
+
+        <div class="chart-glass-card">
+          <div class="chart-title">
+            <span>Encapsulated Data Tally</span>
+            <span style="font-size: 0.82rem; color: var(--terracotta); font-family: var(--font-mono);">Election State</span>
+          </div>
+          <div id="resultsSummaryList" style="display: flex; flex-direction: column; gap: 14px;">
+            <!-- Summary rows injected by JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Admin Console & File I/O -->
+    <section class="portal-section" id="admin">
+      <div class="section-header">
+        <span class="section-subtitle">Inheritance & File I/O</span>
+        <h2 class="section-title">Election Class Switcher & File Persistence</h2>
+        <p class="section-desc">Switching polymorphic Election types and writing user state to `users.txt` and `votes.txt`.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+        <div class="chart-glass-card">
+          <h3 style="font-family: var(--font-serif); font-size: 1.3rem; margin-bottom: 16px;">Polymorphic Election Type</h3>
+          <div class="form-group">
+            <label class="form-label">Select Derived Class</label>
+            <select id="adminElectionType" class="input-glass" onchange="changeElectionType(this.value)">
+              <option value="National">NationalElection : public Election</option>
+              <option value="Regional">RegionalElection : public Election</option>
+              <option value="Local">LocalElection : public Election</option>
+            </select>
+          </div>
+          <hr style="border: 0; border-top: 1px solid var(--glass-border-dark); margin: 20px 0;">
+          <h4 style="font-size: 1rem; margin-bottom: 14px;">Add Candidate Object</h4>
+          <form onsubmit="handleAddCandidate(event)">
+            <div class="form-group">
+              <label class="form-label">Candidate Name</label>
+              <input type="text" id="newCandName" class="input-glass" placeholder="e.g. David Miller" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Political Party</label>
+              <input type="text" id="newCandParty" class="input-glass" placeholder="e.g. Civic Liberty" required>
+            </div>
+            <button type="submit" class="btn-glass btn-primary" style="width: 100%; justify-content: center;">Invoke Election::addCandidate()</button>
+          </form>
+        </div>
+
+        <div class="chart-glass-card">
+          <h3 style="font-family: var(--font-serif); font-size: 1.3rem; margin-bottom: 16px;">File Persistence Stream</h3>
+          <div style="font-family: var(--font-mono); font-size: 0.82rem; background: var(--mocha-dark); color: #E6D5B8; padding: 18px; border-radius: 16px; height: 260px; overflow-y: auto;" id="fileSystemSim">
+            <!-- Simulated File I/O contents -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-glass">
+      <p>© 2026 CS-201 Object-Oriented Programming Course Project • E-Voting System Architecture</p>
+      <p style="font-size: 0.8rem; margin-top: 6px; color: var(--slate-light);">Demonstrating Encapsulation, Inheritance, Polymorphism, & Abstraction in C++20</p>
+    </footer>
+
+  </div>
+
+  <!-- Digital Voting Receipt Modal -->
+  <div class="modal-overlay" id="receiptModal">
+    <div class="modal-receipt-glass">
+      <div class="receipt-stamp">✓</div>
+      <h2 style="font-family: var(--font-serif); font-size: 1.6rem; margin-bottom: 6px;">Ballot Executed</h2>
+      <p style="font-size: 0.9rem; color: var(--slate-rose);">Invoked `Candidate::incrementVote()` and saved transaction to `votes.txt` stream.</p>
+      
+      <div class="receipt-hash" id="modalHash">
+        HASH: 0x8f9b...a1e4c7d2b
+      </div>
+
+      <div style="text-align: left; background: rgba(255,255,255,0.6); padding: 14px; border-radius: 14px; margin-bottom: 20px; font-size: 0.88rem;">
+        <div style="margin-bottom: 4px;"><strong>Voter CNIC:</strong> <span id="modalCnic">35202-1234567-1</span></div>
+        <div style="margin-bottom: 4px;"><strong>Candidate Voted:</strong> <span id="modalCandidate">Dr. Eleanor Vance</span></div>
+        <div><strong>Timestamp:</strong> <span id="modalTime">2026-09-01 20:00 UTC</span></div>
+      </div>
+
+      <button class="btn-glass btn-primary" onclick="closeReceiptModal()" style="width: 100%; justify-content: center;">Close Audit Receipt</button>
+    </div>
+  </div>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
