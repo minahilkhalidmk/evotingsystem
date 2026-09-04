@@ -224,8 +224,8 @@ To compile using `g++` (C++17 or C++20 standard):
 
 ```bash
 # Clone the repository
-git clone https://github.com/ARYousufi/OOP-Project-E-Voting-System-.git
-cd OOP-Project-E-Voting-System-
+git clone https://github.com/minahilkhalidmk/evotingsystem.git
+cd evotingsystem
 
 # Compile the core C++ application
 g++ -std=c++17 "src/Main Code.cpp" -o EVotingSystem.exe
@@ -278,7 +278,8 @@ The web showcase employs a curated **Warm Nude / Skin Tone** palette engineered 
 
 ## 👨‍💻 Contributors & Academic Attribution
 
-- **Lead Developer**: **Abdul Rehman Yousufi** ([@ARYousufi](https://github.com/ARYousufi))
+- **Developer**: **Minahil Khalid** ([@minahilkhalidmk](https://github.com/minahilkhalidmk))
+- **Original Contributor**: **Abdul Rehman Yousufi** ([@ARYousufi](https://github.com/ARYousufi))
 - **Course**: **CS-201 — Object-Oriented Programming**
 - **Domain**: Electronic Voting Systems & Secure Software Design
 
