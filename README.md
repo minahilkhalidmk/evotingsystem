@@ -279,7 +279,6 @@ The web showcase employs a curated **Warm Nude / Skin Tone** palette engineered 
 ## 👨‍💻 Contributors & Academic Attribution
 
 - **Developer**: **Minahil Khalid** ([@minahilkhalidmk](https://github.com/minahilkhalidmk))
-- **Original Contributor**: **Abdul Rehman Yousufi** ([@ARYousufi](https://github.com/ARYousufi))
 - **Course**: **CS-201 — Object-Oriented Programming**
 - **Domain**: Electronic Voting Systems & Secure Software Design
 
